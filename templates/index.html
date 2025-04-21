@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YOLOv8 Live Surveillance</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 2em; }
+        #videoFeed { border: 2px solid black; max-width: 80%; }
+        button { padding: 1em; margin: 1em; font-size: 1em; }
+        ul { text-align: left; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h1>🔍 YOLOv8 Live Surveillance</h1>
+    <img id="videoFeed" src="/video_feed" alt="Live Feed" />
+    <br>
+    <button onclick="captureSnapshot()">📸 Capture Frame</button>
+    <button onclick="downloadReport()">🧾 Download Report</button>
+
+    <h2>Detections:</h2>
+    <ul id="detections"></ul>
+
+    <script>
+        function captureSnapshot() {
+            fetch('/capture', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    const list = document.getElementById('detections');
+                    list.innerHTML = '';
+                    if (data.events.length === 0) {
+                        list.innerHTML = '<li>No objects detected</li>';
+                    } else {
+                        data.events.forEach(event => {
+                            const item = document.createElement('li');
+                            item.textContent = `${event.label} (${event.confidence})`;
+                            list.appendChild(item);
+                        });
+                    }
+                });
+        }
+
+        function downloadReport() {
+            window.open('/generate_report', '_blank');
+        }
+    </script>
+</body>
+</html>
