@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.env
+static/frame_*.jpg
+static/surveillance_report*.pdf
+.DS_Store

@@ -19,7 +19,7 @@ This is a real-time surveillance application built with FastAPI and YOLOv8 that 
 
 ```bash
 # 1. Navigate to your project directory
-cd yolov8_live_surveillance
+cd Secure-Vision
 
 # 2. (Optional) Create a virtual environment
 python -m venv venv
