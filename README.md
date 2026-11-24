@@ -40,7 +40,6 @@ Secure-Vision/
 ├── templates/
 │   └── index.html        # Rosé Pine Dawn C2 frontend dashboard
 ├── static/               # Bounded snapshot frames and generated PDF reports
-├── decision-reports/     # Architectural pre-flight audits and decision records
 ├── test_e2e.py           # Automated end-to-end regression & security test suite
 ├── Dockerfile            # Container deployment configuration
 ├── requirements.txt      # Pinned dependency manifest
@@ -129,13 +128,6 @@ Expected output:
 
 >>> ALL PIPELINE & SECURITY REGRESSION CHECKS PASSED! <<<
 ```
-
----
-
-## 🛡️ Security & Architecture Records
-
-For detailed architectural findings, concurrency gate analysis, and threat modeling, refer to:
-* [Architectural Decision Report (2026-11-23)](decision-reports/2026-11-23-secure-vision-architecture-review.md)
 
 ---
 

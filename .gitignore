@@ -6,4 +6,5 @@ venv/
 .env
 static/frame_*.jpg
 static/surveillance_report*.pdf
+decision-reports/
 .DS_Store
